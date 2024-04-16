@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPizza</title>
+    <link rel="icon" href="/img/Pizza.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<th:block th:insert="~{layouts/header.html::headerLayout}"></th:block>
+<div class="container login">
+    <form method="post" action="/user/registration" class="form-login">
+        <input type="text" placeholder="Логин"
+               name="username"
+               th:value="${error == 'login'|| error == 'password' ? name : null}"
+               class="input-text login-text" required>
+        <div class="error" th:if="${error == 'login'}">Указанный пользователь уже зарегистрирован</div>
+        <input type="password" placeholder="Пароль" name="password" class="input-text login-text" required>
+        <input type="password" placeholder="Подтвердить пароль" name="passwordRepeat" class="input-text login-text">
+        <div class="error" th:if="${error == 'password'}">Пароли не совпадают</div>
+        <input type="submit" value="Регистрация" class="button login-submit" required>
+    </form>
+</div>
+</body>
+</html>

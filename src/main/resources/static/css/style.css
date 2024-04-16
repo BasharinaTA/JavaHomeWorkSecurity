@@ -1,0 +1,164 @@
+body {
+    background-color: rgba(0, 0, 0, 0.57);
+    font-size: medium;
+    color: #d1fdf6;
+    margin: 0;
+}
+
+header {
+    min-width: 700px;
+    font-size: 1.25em;
+    margin: auto;
+    background-color: #11e4cda3;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+    max-width: 1800px;
+    min-width: 700px;
+    font-size: 1.25em;
+    background-color: rgb(39 72 78 / 50%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.home {
+    background-image: url(../img/pizza.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.a-button {
+    text-decoration: none;
+    border: 1px solid rgb(125 125 125);
+    color: black;
+    border-radius: 7px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.form-login {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.input-text {
+    text-indent: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.button {
+    border-radius: 5px;
+    background-color: #11e4cda3;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid rgb(125 125 125);
+    font-size: 16px;
+}
+
+.login-text {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.login-submit {
+    width: 101%;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+.form-search {
+    display: flex;
+    justify-content: right;
+    margin: 6px;
+}
+
+.login {
+    width: 40%;
+}
+
+.register {
+    text-decoration: none;
+    color: #d1fdf6;
+    margin-top: 40px;
+}
+
+.table {
+    width: 100%;
+    margin: 20px auto;
+}
+
+th {
+    font-size: 1.3em;
+}
+
+td {
+    word-wrap: break-word;
+    padding: 5px;
+    text-align: left;
+}
+
+.empty {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.modal-window {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    min-width: 300px;
+    max-width: 400px;
+    width: 30%;
+    background-color: #3e3e3e;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    gap: 20px;
+}
+
+form label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.25em;
+}
+
+form label input,
+form label textarea,
+.composition {
+    width: 70%;
+}
+
+.name {
+    width: 20%;
+}
+
+.logout {
+    align-self: end;
+}
+
+.error {
+    font-size: 18px;
+    align-self: end;
+    color: #f4bebe;
+    padding-top: 10px;
+}
+
+.hidden {
+    display: none;
+}

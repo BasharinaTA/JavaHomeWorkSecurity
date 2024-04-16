@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPizza</title>
+    <link rel="icon" href="/img/Pizza.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<th:block th:insert="~{layouts/header.html::headerLayout}"></th:block>
+<div class="container login">
+    <form class="form-login" method="post" action="/login">
+        <input type="text" placeholder="Логин" name="username" class="input-text login-text">
+        <input type="password" placeholder="Пароль" name="password" class="input-text login-text">
+        <div class="error" th:if="${error}">Логин или пароль введены неверно </div>
+        <input type="submit" value="Войти" class="button login-submit" >
+        <a href="/registration" class="register">Зарегистрироваться</a>
+    </form>
+</div>
+</body>
+</html>

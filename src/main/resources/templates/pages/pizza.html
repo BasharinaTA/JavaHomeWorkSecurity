@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPizza</title>
+    <link rel="icon" href="/img/Pizza.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<th:block th:insert="~{layouts/header.html::headerLayout}"></th:block>
+<div class="container">
+    <form method="post" action="/pizza/search" class="form-search">
+        <input type="text" placeholder="Название" name="name" class="input-text">
+        <input type="submit" value="Поиск" class="button">
+    </form>
+    <button th:if="${canWrite}" class="button">Добавить</button>
+    <div th:if="${pizzas.isEmpty()}" class="empty">Список пуст</div>
+    <table th:if="${!pizzas.isEmpty()}" class="table">
+        <thead>
+        <tr>
+            <th class="hidden">id</th>
+            <th>Название</th>
+            <th>Состав</th>
+            <th th:if="${canWrite}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pizza : ${pizzas}">
+            <td class="hidden">[[${pizza.id}]]</td>
+            <td class="name">[[${pizza.name}]]</td>
+            <td class="composition">[[${pizza.composition}]]</td>
+            <td th:if="${canWrite}" >
+                <button class="button">Редактировать</button>
+            </td>
+            <td th:if="${canWrite}">
+                <form method="post" th:action="@{'/pizza/delete/' + ${pizza.id}}">
+                    <input type="submit" value="Удалить" class="button">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<form class="modal-window hidden" name="form" method="post" action="/pizza/save">
+    <label class="hidden">id<input type="text" name="id"></label>
+    <label>Название<input type="text" name="name" class="input-text"></label>
+    <label>Состав<textarea rows="3" name="composition" class="input-text"></textarea></label>
+    <input type="submit" value="Сохранить" class="button">
+</form>
+<script src="/scripts/script.js"></script>
+</body>
+</html>
